@@ -1,1 +1,1 @@
-# Leetcode
+This repository is simply a tracking for Leetcode solutions.
