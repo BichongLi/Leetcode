@@ -1,6 +1,7 @@
-package com.leetcode.service;
+package com.leetcode.service.tree;
 
 import com.leetcode.model.TreeNode;
+import com.leetcode.service.Solution;
 
 import java.util.ArrayList;
 import java.util.List;

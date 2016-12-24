@@ -1,4 +1,6 @@
-package com.leetcode.service;
+package com.leetcode.service.heap;
+
+import com.leetcode.service.Solution;
 
 import java.util.Arrays;
 import java.util.HashMap;
