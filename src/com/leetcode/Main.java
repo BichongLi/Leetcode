@@ -1,16 +1,12 @@
 package com.leetcode;
 
-import com.leetcode.model.TreeNode;
-import com.leetcode.service.BiSolution;
-import com.leetcode.service.CountArrangement;
-import com.leetcode.service.RotateArray;
-import com.leetcode.service.Solution;
-import com.leetcode.service.tree.FindBottomLeftValue;
+import com.leetcode.service.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution<Integer, Integer> solution = new CountArrangement();
-        System.out.println(solution.solve(15));
+        Solution<int[], Integer> solution = new MinMoves2();
+        int[] series = {3, 2, 1};
+        System.out.println(solution.solve(series));
     }
 }
