@@ -1,13 +1,15 @@
 package com.leetcode;
 
 import com.leetcode.service.BiSolution;
+import com.leetcode.service.Solution;
 import com.leetcode.service.dp.CheckSubarraySum;
+import com.leetcode.service.dp.PredictTheWinner;
 
 public class Main {
 
     public static void main(String[] args) {
-        BiSolution<int[], Integer, Boolean> solution = new CheckSubarraySum();
-        int[] nums = {23, 2, 4, 6, 7};
-        System.out.print(solution.solve(nums, 6));
+        Solution<int[], Boolean> solution = new PredictTheWinner();
+        int[] nums = {1, 3, 1};
+        System.out.print(solution.solve(nums));
     }
 }
