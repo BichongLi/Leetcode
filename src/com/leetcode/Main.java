@@ -1,14 +1,13 @@
 package com.leetcode;
 
-import com.leetcode.service.*;
-
-import java.util.List;
+import com.leetcode.service.BiSolution;
+import com.leetcode.service.dp.CheckSubarraySum;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution<int[][], Integer> solution = new FindMinArrowShots();
-        int[][] points = {{9,12},{1,10},{4,11},{8,12},{3,9},{6,9},{6,7}};
-        System.out.println(solution.solve(points));
+        BiSolution<int[], Integer, Boolean> solution = new CheckSubarraySum();
+        int[] nums = {23, 2, 4, 6, 7};
+        System.out.print(solution.solve(nums, 6));
     }
 }
