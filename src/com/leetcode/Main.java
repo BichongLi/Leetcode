@@ -2,14 +2,17 @@ package com.leetcode;
 
 import com.leetcode.service.BiSolution;
 import com.leetcode.service.Solution;
-import com.leetcode.service.dp.CheckSubarraySum;
-import com.leetcode.service.dp.PredictTheWinner;
+import com.leetcode.service.dp.IntegerBreak;
+import com.leetcode.service.dp.WiggleMaxLength;
+import com.leetcode.service.dp.WordBreak;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution<int[], Boolean> solution = new PredictTheWinner();
-        int[] nums = {1, 3, 1};
-        System.out.print(solution.solve(nums));
+        Solution<Integer, Integer> solution = new IntegerBreak();
+        System.out.println(solution.solve(9));
     }
 }

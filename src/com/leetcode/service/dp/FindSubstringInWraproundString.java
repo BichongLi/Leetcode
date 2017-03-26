@@ -11,19 +11,22 @@ public class FindSubstringInWraproundString implements Solution<String, Integer>
     @Override
     public Integer solve(String p) {
         if (p == null || p.length() == 0) return 0;
-        int[] dp = new int[p.length()];
-        boolean[] flag = new boolean[26];
-        dp[p.length() - 1] = 1;
-        char right = p.charAt(p.length() - 1);
-        for (int i = p.length() - 2; i >= 0; i--) {
-            if (charsTogether(p.charAt(i), p.charAt(i + 1))) {
-
+        int[] maxLength = new int[26];
+        maxLength[p.charAt(0) - 'a'] = 1;
+        int currentMax = 1;
+        for (int i = 1; i < p.length(); i++) {
+            if (charsTogether(p.charAt(i - 1), p.charAt(i))) {
+                currentMax++;
             } else {
-                dp[i] = 1 + dp[i + 1];
-                start[i] = 1;
+                currentMax = 1;
             }
+            maxLength[p.charAt(i) - 'a'] = Math.max(maxLength[p.charAt(i) - 'a'], currentMax);
         }
-        return dp[0];
+        int sum = 0;
+        for (int i = 0; i < 26; i++) {
+            sum += maxLength[i];
+        }
+        return sum;
     }
 
     private boolean charsTogether(char c1, char c2) {
