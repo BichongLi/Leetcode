@@ -1,14 +1,13 @@
 package com.leetcode;
 
-import com.leetcode.service.DiffWaysToCompute;
-import com.leetcode.service.Solution;
+import com.leetcode.service.*;
 
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution<String, List<Integer>> solution = new DiffWaysToCompute();
-        System.out.println(solution.solve("2-1-1"));
+        BiSolution<String, Integer, String> solution = new LicenseKeyFormatting();
+        System.out.println(solution.solve("2-4A0r7-4k", 3));
     }
 }
