@@ -1,6 +1,7 @@
 package com.leetcode;
 
 import com.leetcode.service.*;
+import com.leetcode.service.dp.CountSubstrings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +9,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        BiSolution<String, List<String>, String> solution = new FindLongestWord();
-        List<String> list = new ArrayList<>();
-        list.add("a");
-        list.add("b");
-        list.add("c");
-        System.out.println(solution.solve("abpcplea", list));
+        Solution<String, Integer> solution = new CountSubstrings();
+        System.out.println(solution.solve("abc"));
     }
 }
