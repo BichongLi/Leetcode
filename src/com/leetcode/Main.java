@@ -2,6 +2,8 @@ package com.leetcode;
 
 import com.leetcode.service.*;
 import com.leetcode.service.dp.CountSubstrings;
+import com.leetcode.service.dp.FindPaths;
+import com.leetcode.service.dp.GetMoneyAmount;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        Solution<String, Integer> solution = new CountSubstrings();
-        System.out.println(solution.solve("abc"));
+        FindPaths solution = new FindPaths();
+        System.out.println(solution.solve(10, 10, 0, 5, 5));
     }
 }
