@@ -3,6 +3,7 @@ package com.leetcode;
 import com.leetcode.service.*;
 import com.leetcode.service.backtracking.CombinationSum;
 import com.leetcode.service.backtracking.Subsets;
+import com.leetcode.service.backtracking.SubsetsWithDup;
 import com.leetcode.service.bst.ContainsNearbyAlmostDuplicate;
 import com.leetcode.service.dp.CountSubstrings;
 import com.leetcode.service.dp.FindPaths;
@@ -18,7 +19,7 @@ import java.util.PriorityQueue;
 public class Main {
 
     public static void main(String[] args) {
-        BiSolution<int[], Integer, List<List<Integer>>> solution = new CombinationSum();
-        solution.solve(new int[]{8, 7, 4, 3}, 11);
+        Solution<int[], List<List<Integer>>> solution = new SubsetsWithDup();
+        System.out.println(solution.solve(new int[]{1, 3, 3, 3}));
     }
 }
