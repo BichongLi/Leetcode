@@ -2,6 +2,7 @@ package com.leetcode;
 
 import com.leetcode.service.*;
 import com.leetcode.service.backtracking.CombinationSum;
+import com.leetcode.service.backtracking.Partition;
 import com.leetcode.service.backtracking.Subsets;
 import com.leetcode.service.backtracking.SubsetsWithDup;
 import com.leetcode.service.bst.ContainsNearbyAlmostDuplicate;
@@ -19,7 +20,7 @@ import java.util.PriorityQueue;
 public class Main {
 
     public static void main(String[] args) {
-        Solution<int[], List<List<Integer>>> solution = new SubsetsWithDup();
-        System.out.println(solution.solve(new int[]{1, 3, 3, 3}));
+        Solution<String, List<List<String>>> solution = new Partition();
+        System.out.println(solution.solve("aba"));
     }
 }
