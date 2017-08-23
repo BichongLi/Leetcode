@@ -1,10 +1,7 @@
 package com.leetcode;
 
 import com.leetcode.service.*;
-import com.leetcode.service.backtracking.CombinationSum;
-import com.leetcode.service.backtracking.Partition;
-import com.leetcode.service.backtracking.Subsets;
-import com.leetcode.service.backtracking.SubsetsWithDup;
+import com.leetcode.service.backtracking.*;
 import com.leetcode.service.bst.ContainsNearbyAlmostDuplicate;
 import com.leetcode.service.dp.CountSubstrings;
 import com.leetcode.service.dp.FindPaths;
@@ -20,7 +17,7 @@ import java.util.PriorityQueue;
 public class Main {
 
     public static void main(String[] args) {
-        Solution<String, List<List<String>>> solution = new Partition();
-        System.out.println(solution.solve("aba"));
+        BiSolution<Integer, Integer, String> solution = new GetPermutation();
+        System.out.println(solution.solve(1, 1));
     }
 }
