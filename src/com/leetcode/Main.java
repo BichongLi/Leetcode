@@ -17,7 +17,7 @@ import java.util.PriorityQueue;
 public class Main {
 
     public static void main(String[] args) {
-        BiSolution<Integer, Integer, String> solution = new GetPermutation();
-        System.out.println(solution.solve(1, 1));
+        Solution<int[], List<List<Integer>>> solution = new FindSubsequences();
+        System.out.println(solution.solve(new int[]{4, 6, 7, 7}));
     }
 }
