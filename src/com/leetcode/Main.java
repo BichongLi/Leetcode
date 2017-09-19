@@ -11,6 +11,7 @@ import com.leetcode.service.graph.FindMinHeightTrees;
 import com.leetcode.service.search.FindOrder;
 import com.leetcode.service.search.LongestIncreasingPath;
 import com.leetcode.service.tree.AddOneRow;
+import com.leetcode.service.tree.WidthOfBinaryTree;
 import com.leetcode.service.trie.PalindromePairs;
 
 import java.util.List;
@@ -18,11 +19,14 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        TriSolution<TreeNode, Integer, Integer, TreeNode> solution = new AddOneRow();
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.left.left = new TreeNode(3);
-        root.left.right = new TreeNode(1);
-        solution.solve(root, 1, 3);
+        Solution<TreeNode, Integer> solution = new WidthOfBinaryTree();
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(3);
+        root.right = new TreeNode(2);
+        root.left.left = new TreeNode(5);
+        root.right.right = new TreeNode(9);
+        root.left.left.left = new TreeNode(6);
+        root.right.right.right = new TreeNode(7);
+        solution.solve(root);
     }
 }
