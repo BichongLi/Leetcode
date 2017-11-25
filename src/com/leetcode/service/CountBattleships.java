@@ -9,26 +9,22 @@ public class CountBattleships implements Solution<char[][], Integer> {
     @Override
     public Integer solve(char[][] board) {
         int count = 0;
-        boolean[][] flag = new boolean[board.length][board[0].length];
+        int[][] dirs = new int[][] {{0, -1}, {-1, 0}};
         for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                if (findBattle(board, flag, i, j)) count++;
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] == '.') continue;
+                boolean flag = false;
+                for (int k = 0; k < 2; k++) {
+                    int tx = i + dirs[k][0];
+                    int ty = j + dirs[k][1];
+                    if (tx >= 0 && ty >= 0 && board[tx][ty] == 'X') {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag) count++;
             }
         }
         return count;
-    }
-
-    private boolean findBattle(char[][] board, boolean[][] flag, int i, int j) {
-        if (board[i][j] != 'X' || flag[i][j]) return false;
-        flag[i][j] = true;
-        for (int x = i + 1; x < board.length; x++) {
-            if (board[x][j] == 'X') flag[x][j] = true;
-            else break;
-        }
-        for (int y = j + 1; y < board[0].length; y++) {
-            if (board[i][y] == 'X') flag[i][y] = true;
-            else break;
-        }
-        return true;
     }
 }
