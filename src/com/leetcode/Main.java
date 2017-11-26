@@ -1,12 +1,13 @@
 package com.leetcode;
 
+import com.leetcode.service.ReverseWords;
 import com.leetcode.service.Solution;
 import com.leetcode.service.math.MaximumSwap;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution<Integer, Integer> solution = new MaximumSwap();
-        solution.solve(9973);
+        Solution<char[], Void> solution = new ReverseWords();
+        solution.solve("the sky is blue".toCharArray());
     }
 }
