@@ -11,17 +11,21 @@ public class RotateArray implements BiSolution<int[], Integer, Void> {
     public Void solve(int[] nums, Integer k) {
         if (nums == null || nums.length <= 1 || k <= 0) return null;
         int len = nums.length;
-        k = k % len;
-        int[] tmp = new int[k];
-        for (int i  = 1; i <= k; i++) {
-            tmp[k - i] = nums[len - i];
-        }
-        for (int i = 1; i <= len - k; i++) {
-            nums[len - i] = nums[len - k - i];
-        }
-        for (int i = 0; i < k; i++) {
-            nums[i] = tmp[i];
-        }
+        k %= len;
+        reverse(nums, 0, len - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, len - 1);
         return null;
+    }
+
+    private void reverse(int[] nums, int start, int end) {
+        int tmp;
+        while (start < end) {
+            tmp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = tmp;
+            start++;
+            end--;
+        }
     }
 }
