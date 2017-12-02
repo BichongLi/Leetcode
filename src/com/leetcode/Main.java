@@ -7,7 +7,7 @@ import com.leetcode.service.math.MaximumSwap;
 public class Main {
 
     public static void main(String[] args) {
-        BiSolution<String, String, Integer> solution = new StrStr();
-        solution.solve("mississippi", "issip");
+        Solution<char[], Integer> solution = new Compress();
+        solution.solve(new char[]{'a', 'b', 'b'});
     }
 }
