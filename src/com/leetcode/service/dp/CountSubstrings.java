@@ -15,38 +15,21 @@ import java.util.Map;
 public class CountSubstrings implements Solution<String, Integer> {
     @Override
     public Integer solve(String s) {
-        int dp[] = new int[s.length()];
-        Map<Character, List<Integer>> dict = new HashMap<Character, List<Integer>>();
-        dp[0] = 1;
-        List<Integer> indexes = new ArrayList<Integer>();
-        indexes.add(0);
-        dict.put(s.charAt(0), indexes);
-
-        for (int i = 1; i < s.length(); i++) {
-            dp[i] = dp[i - 1] + 1;
-            if (dict.containsKey(s.charAt(i))) {
-                indexes = dict.get(s.charAt(i));
-                for (Integer index : indexes) {
-                    dp[i] = isPalindrome(s, index, i) ? dp[i] + 1 : dp[i];
+        if (s == null || s.length() == 0) return 0;
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            dp[i][i] = true;
+        }
+        int count = s.length();
+        for (int i = s.length() - 2; i >= 0; i--) {
+            for (int j = s.length() - 1; j > i; j--) {
+                if (s.charAt(i) == s.charAt(j) &&
+                        (j == i + 1 || dp[i + 1][j - 1])) {
+                    dp[i][j] = true;
+                    count++;
                 }
-            } else {
-                indexes = new ArrayList<Integer>();
-            }
-            indexes.add(i);
-            dict.put(s.charAt(i), indexes);
-        }
-        return dp[s.length() - 1];
-    }
-
-    private boolean isPalindrome(String s, int start, int end) {
-        while (start <= end) {
-            if (s.charAt(start) == s.charAt(end)) {
-                start++;
-                end--;
-            } else {
-                return false;
             }
         }
-        return true;
+        return count;
     }
 }
