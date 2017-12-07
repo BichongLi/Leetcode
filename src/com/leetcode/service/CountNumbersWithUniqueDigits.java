@@ -12,19 +12,13 @@ public class CountNumbersWithUniqueDigits implements Solution<Integer, Integer> 
     @Override
     public Integer solve(Integer n) {
         if (n > 10) n = 10;
-        if (count[n] != 0) return count[n];
-        calculate(n);
+        int[] count = new int[11];
+        count[0] = 1;
+        count[1] = 10;
+        count[2] = 91;
+        for (int i = 3; i <= n; i++) {
+            count[i] = (count[i - 1] - count[i - 2]) * (11 - i) + count[i - 1];
+        }
         return count[n];
-    }
-
-    private void calculate(int n) {
-        if (count[n - 1] == 0) {
-            calculate(n - 1);
-        }
-        int tmp = 1;
-        for (int i = 11 - n; i <= 9; i++) {
-            tmp *= i;
-        }
-        count[n] = count[n - 1] + tmp * 9;
     }
 }
